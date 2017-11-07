@@ -26,4 +26,4 @@ https://youtu.be/s1p4R4rzWUs
 
 ## Kit version
 
-Based on ReactQL kit [v2.8.5](https://github.com/reactql/kit/releases/tag/2.8.5)
+Based on ReactQL kit [v2.9.5](https://github.com/reactql/kit/releases/tag/2.9.5)
