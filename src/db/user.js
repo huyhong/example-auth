@@ -35,7 +35,7 @@ export const User = db.define('user', {
   },
   email: {
     type: Sequelize.STRING,
-    allowNull: false,
+    allowNull: true,
     validate: {
       isEmail: true,
       len: [2, 512],
@@ -56,6 +56,16 @@ export const User = db.define('user', {
     allowNull: false,
     len: [2, 32],
     isAlphanumeric: true,
+  },
+  provider: {
+    type: Sequelize.STRING,
+    allowNull: true,
+    len: [2, 32],
+    isAlphanumeric: true,
+  },
+  providerId: {
+    type: Sequelize.INTEGER,
+    allowNull: true,
   },
 });
 
@@ -120,7 +130,7 @@ export async function createUserFromSocial(data) {
   // Check if we have an existing user
   const existingUser = await User.findOne({
     where: {
-      email: data.email,
+      providerId: data.providerId,
     },
   });
 
@@ -134,5 +144,7 @@ export async function createUserFromSocial(data) {
     password: null,
     firstName: data.firstName,
     lastName: data.lastName,
+    provider: data.provider,
+    providerId: data.providerId,
   });
 }

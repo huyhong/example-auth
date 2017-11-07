@@ -26,6 +26,8 @@ const User = props => {
     email: '',
     firstName: '',
     lastName: '',
+    provider: '',
+    providerId: '',
   };
   const fields = [
     {
@@ -48,6 +50,16 @@ const User = props => {
       label: 'Last name',
       value: user.lastName,
     },
+    {
+      name: 'provider',
+      label: 'Provider',
+      value: user.provider,
+    },
+    {
+      name: 'providerId',
+      label: 'Provider ID',
+      value: user.providerId,
+    },
   ];
 
   return (
@@ -61,10 +73,10 @@ const User = props => {
             to the server. Custom middleware handle passing the JWT to our GraphQL request.
           </p>
           <Form>
-            {fields.map(field => (
+            {fields.map((field, index) => (
               <Form.Input
                 readOnly
-                key={field.name}
+                key={index}
                 name={field.name}
                 label={field.label}
                 value={field.value} />

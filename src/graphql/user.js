@@ -54,6 +54,18 @@ export const UserType = new GraphQLObjectType({
           return user.lastName;
         },
       },
+      provider: {
+        type: GraphQLString,
+        resolve(user) {
+          return user.provider;
+        },
+      },
+      providerId: {
+        type: GraphQLString,
+        resolve(user) {
+          return user.providerId;
+        },
+      },
       createdAt: {
         type: GraphQLString,
         resolve(user) {
@@ -113,6 +125,12 @@ export const createUserMutation = {
       type: GraphQLString,
     },
     lastName: {
+      type: GraphQLString,
+    },
+    provider: {
+      type: GraphQLString,
+    },
+    providerId: {
       type: GraphQLString,
     },
   },

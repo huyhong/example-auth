@@ -115,9 +115,11 @@ if (SERVER) {
       let user = {};
       try {
         user = await createUserFromSocial({
-          email: profile.emails[0].value,
+          email: profile.emails ? profile.emails[0].value : null,
           firstName: profile.name.givenName,
           lastName: profile.name.familyName,
+          provider: profile.provider,
+          providerId: profile.id,
         });
       } catch (e) {
         // eslint-disable-next-line
