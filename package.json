@@ -103,7 +103,7 @@
     "koa-send": "^4.1.1",
     "koa-sslify": "^2.1.2",
     "microseconds": "^0.1.0",
-    "passport-facebook": "^2.1.1",
+    "passport-facebook": "rwky/passport-facebook#9d19fc3ad84ccfed6e00cce0f72e263a13b826ef",
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "react-apollo": "^1.4.16",

@@ -99,6 +99,7 @@ if (SERVER) {
       clientID: '1822349178077971',
       clientSecret: '1080c5f86936fe83da8d18a18b1c341a',
       callbackURL: `${getServerURL()}/auth/facebook/callback/`,
+      graphApiVersion: 'v2.11',
       // We only need certain fields from Facebook, so specify which here
       profileFields: [
         'id',
